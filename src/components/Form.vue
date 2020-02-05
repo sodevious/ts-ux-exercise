@@ -3,7 +3,7 @@
     <slot></slot>
 
     <div class="ts-expert-row">
-      <Expert v-for="expert in experts" v-bind="expert" />
+      <Expert v-for="expert in experts" v-bind="expert" :key="expert.name" />
       <p>Lena Smith, Roy Johnson or Elijah Taylor will get right back to you.</p>
     </div>
 
