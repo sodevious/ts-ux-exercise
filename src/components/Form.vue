@@ -3,7 +3,7 @@
     <slot></slot>
 
     <div class="ts-expert-row">
-      <Experts />ff
+      <Expert v-for="expert in experts" v-bind="expert" />
       <p>Lena Smith, Roy Johnson or Elijah Taylor will get right back to you.</p>
     </div>
 
@@ -20,11 +20,33 @@
   import { mapMutations } from 'vuex';
 
 import Button from "./Button.vue";
+import Expert from "./Expert.vue";
 
 export default {
   name: "Form",
   components: {
     Button
+    Button,
+    Expert
+  },
+  data() {
+    return {
+      experts: [
+        {
+          name: "Lena Smith",
+          avatar: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1949180/uxe-exercise-portrait2.png"
+        },
+        {
+          name: "Roy Johnson",
+          avatar: ""
+        },
+        {
+          name: "Elijah Taylor",
+          avatar: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1949180/uxe-exercise-portrait1.png"
+        }
+      ]
+    }
+  },
   methods: {
     ...mapMutations(['openForm', 'closeForm', 'submitForm'])
   }
@@ -42,5 +64,11 @@ export default {
 .ts-expert-row {
   display: flex;
   align-items: center;
+  margin: ($ts-gutter / 2)  0;
+  padding-bottom: $ts-gutter;
+
+  p {
+    padding: ($ts-gutter * 2);
+  }
 }
 </style>

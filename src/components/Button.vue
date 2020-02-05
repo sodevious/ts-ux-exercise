@@ -37,15 +37,15 @@ export default {
 
 
   & + & {
-    margin-right: 1rem;
+    margin-left: 1rem;
   }
 }
 
 .ts-button-link {
-  @include ts-button-theme($ts-white, $ts-blue-base);
+  @include ts-button-theme($ts-white, $ts-base-blue);
 }
 
 .ts-button-primary {
-  @include ts-button-theme($ts-blue-base, $ts-white);
+  @include ts-button-theme($ts-base-blue, $ts-white);
 }
 </style>
