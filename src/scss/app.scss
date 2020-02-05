@@ -1,0 +1,47 @@
+@import "~@/scss/_variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $ts-font-global;
+  font-size: $ts-font-regular;
+  line-height: 1;
+  color: $ts-black;
+}
+
+
+// Heading styles
+
+h3 {
+  font-size: 20px;
+  letter-spacing: -0.004em;
+}
+
+.ts-heading {
+  margin: $ts-gutter 0;
+  font-weight: $ts-font-bold;
+}
+
+
+// Paragraph Styles
+
+p {
+  margin: $ts-gutter 0;
+}
+
+.ts-p-large {
+  font-size: $ts-font-large;
+}
+
+.ts-p-gray {
+  color: $ts-gray-text;
+}
+
+.ts-p-bold {
+  font-weight: $ts-font-bold;
+}

@@ -1,0 +1,26 @@
+// In real life obviously these values would
+// come from Radiant variables and files!
+
+$ts-black: #000000;
+$ts-black-toned: #1C2330;
+$ts-gray-tint-1: #A5ACB9;
+$ts-gray-tint-3: #DBDFE7;
+$ts-gray-tint-4: #EAEDF2;
+$ts-gray-text: #777E8B;
+$ts-white: #ffffff;
+
+$ts-blue-base: #2E75F0;
+
+$ts-font-sans-serif: "Plain", "Poppins", "Montserrat", "Gotham", sans-serif;
+$ts-font-global: $ts-font-sans-serif;
+
+$ts-font-small: 12px;
+$ts-font-regular: 14px;
+$ts-font-large: 16px;
+
+$ts-font-normal: 400;
+$ts-font-bold: 600; // more of a semibold but i'm eyeballing it
+
+$ts-gutter: 12px;
+
+$ts-button-size: 32px;
