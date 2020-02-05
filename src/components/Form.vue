@@ -17,12 +17,16 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
+
 import Button from "./Button.vue";
 
 export default {
   name: "Form",
   components: {
     Button
+  methods: {
+    ...mapMutations(['openForm', 'closeForm', 'submitForm'])
   }
 };
 </script>

@@ -19,14 +19,11 @@
       <h3 class="ts-heading">Thank you.</h3>
       <p class="ts-p-gray">An expert will get back to you soon.</p>
     </Page>
-
-    {{formOpen}}
-    {{formSubmitted}}
   </div>
 </template>
 
 <script>
-import { mapState, mapGetter, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 import Page from "./components/Page.vue";
 import Button from "./components/Button.vue";
@@ -43,15 +40,7 @@ export default {
     ...mapState(['formOpen', 'formSubmitted']),
   },
   methods: {
-    openForm() {
-      this.$store.commit('openForm');
-    },
-    closeForm() {
-      this.$store.commit('closeForm');
-    },
-    submitForm() {
-      this.$store.commit('submitForm');
-    }
+    ...mapMutations(['openForm', 'closeForm', 'submitForm'])
   }
 };
 </script>
@@ -60,10 +49,15 @@ export default {
   @import "~@/scss/app.scss";
 
   .ts-view-landing {
+    padding: ($ts-gutter / 2) ($ts-gutter * 2);
     align-items: center;
   }
 
   .ts-view-thanks {
     flex-flow: column;
+
+    p {
+      margin: $ts-gutter 0 0 0;
+    }
   }
 </style>
