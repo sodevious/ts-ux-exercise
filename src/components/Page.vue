@@ -20,7 +20,7 @@ export default {
   display: flex;
   align-items: flex-start;
   background-color: $ts-white;
-  padding: $ts-gutter ($ts-gutter * 2);
+  padding: $ts-gutter * 2;
   border-bottom: 1px solid $ts-gray-tint-3;
 
   &:first-child {

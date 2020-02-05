@@ -7,12 +7,20 @@
       <p>Lena Smith, Roy Johnson or Elijah Taylor will get right back to you.</p>
     </div>
 
-    <Button @click.native="closeForm" class="ts-button-link">
-      Cancel
-    </Button>
-    <Button @click.native="submitForm" class="ts-button-primary">
-      Send
-    </Button>
+    <form  v-on:submit.prevent>
+      <p class="ts-p-large">What you search for</p>
+      <input type="text" class="ts-form-input" value="top account reigons ranked by total amount booked" />
+
+      <p>Can you explain in a little more detail?</p>
+      <textarea class="ts-form-input ts-form-textarea" placeholder="Message for expert" rows="4"></textarea>
+
+      <Button @click.native="closeForm" class="ts-button">
+        Cancel
+      </Button>
+      <Button @click.native="submitForm" class="ts-button-primary">
+        Send
+      </Button>
+    </form>
   </div>
 </template>
 
@@ -25,7 +33,6 @@ import Expert from "./Expert.vue";
 export default {
   name: "Form",
   components: {
-    Button
     Button,
     Expert
   },
@@ -53,12 +60,36 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .ts-form {
-  border: 1px solid #DBDBDB;
+  border: 1px solid #DBDBDB; // color also not defined in figma?
   flex-flow: column;
-  padding: $ts-gutter * 2;
+  display: block;
   bottom: 0;
+}
+
+.ts-form-input {
+  width: 100%;
+  display: block;
+  padding: $ts-gutter;
+  margin-bottom: $ts-gutter * 2;
+  font-size: $ts-font-regular;
+  font-family: $ts-font-sans-serif;
+  border-radius: 2px 0px 0px 2px;
+  border: 1px solid #DBDEE3; // blend overlay in figma changes the color :(
+
+  &[type="text"] {
+    padding-left: $ts-gutter * 3;
+    background-repeat: no-repeat;
+    background-position: $ts-gutter center;
+    background-image: url('../icons/icon-search.svg');
+  }
+}
+
+.ts-form-textarea {
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border: 1px solid #E6E6E6;
+  resize: none;
 }
 
 .ts-expert-row {
