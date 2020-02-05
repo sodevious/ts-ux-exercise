@@ -7,11 +7,25 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import { mapState, mapGetter, mapActions } from 'vuex';
 
 export default {
   name: "app",
   components: {
     HelloWorld
+  computed: {
+    ...mapState(['formOpen', 'formSubmitted']),
+  },
+  methods: {
+    openForm() {
+      this.$store.commit('openForm');
+    },
+    closeForm() {
+      this.$store.commit('closeForm');
+    },
+    submitForm() {
+      this.$store.commit('submitForm');
+    }
   }
 };
 </script>
