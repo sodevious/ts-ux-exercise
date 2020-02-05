@@ -1,18 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- Landing Page -->
+    <Page class="ts-view-landing">
+      <p class="ts-p-large ts-p-bold">Not what you expected?</p>
+
+      <Button @click.native="openForm" class="ts-button-link">
+        Ask an expert
+      </Button>
+    </Page>
+
+    <!-- Ask an expert -->
+    <Form v-if="formOpen" class="ts-page">
+      <h3 class="ts-heading">Ask an expert</h3>
+    </Form>
+
+    <!-- Thank You page -->
+    <Page v-if="formSubmitted" class="ts-view-thanks">
+      <h3 class="ts-heading">Thank you.</h3>
+      <p class="ts-p-gray">An expert will get back to you soon.</p>
+    </Page>
+
+    {{formOpen}}
+    {{formSubmitted}}
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import { mapState, mapGetter, mapActions } from 'vuex';
 
+import Page from "./components/Page.vue";
+import Button from "./components/Button.vue";
+import Form from "./components/Form";
+
 export default {
-  name: "app",
+  name: "app", // ("Landing")
   components: {
-    HelloWorld
+    Page,
+    Button,
+    Form
+  },
   computed: {
     ...mapState(['formOpen', 'formSubmitted']),
   },
@@ -31,12 +57,13 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "~@/scss/app.scss";
+
+  .ts-view-landing {
+    align-items: center;
+  }
+
+  .ts-view-thanks {
+    flex-flow: column;
+  }
 </style>
